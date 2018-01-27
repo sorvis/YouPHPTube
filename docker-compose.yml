@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+	youphptube:
+		image: youphptube
+		build: Dockerfile
+		context: .
+		ports: "443:443:	
+		depends_on:
+			- mysql
+	mysql:
+		image: mysql
+		environment:
+			- MYSQL_ROOT_PASSWORD=your_db_passwd
